@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Назначение встречи</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+</head>
+<body class="button-padding">
+
+<div class="wrapper">
+    <form action="#" method="POST" class="meetings-create-form">
+        <div class="meetings-create-form-title">Тема встречи</div>
+
+        <input type="text" name="subject" class="form-input" style="width: 100%;" placeholder="Тема" disabled value="Встреча разработчиков моб. приложений">
+
+        <div class="row">
+            <div class="col-6">
+                <div class="custom-select meetings-create-form-date">
+                    <select name="date" style="margin-bottom: 0;" autocomplete="off" disabled>
+                        <option value="">Дата</option>
+                        <option value="28 октября">28 октября</option>
+                        <option value="29 октября" selected>29 октября</option>
+                        <option value="30 октября">30 октября</option>
+                        <option value="1 ноября">1 ноября</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="custom-select meetings-create-form-time">
+                    <select name="time" style="margin-bottom: 0;" autocomplete="off" disabled>
+                        <option value="">Время</option>
+                        <option value="13:00">13:00</option>
+                        <option value="13:30" selected>13:30</option>
+                        <option value="14:00">14:00</option>
+                        <option value="14:30">14:30</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="meetings-create-form-title">Описание встречи</div>
+
+        <textarea name="description" class="form-input" style="width: 100%" placeholder="Что будет обсуждаться на встрече?" disabled>Обсуждение насущных вопросов</textarea>
+
+        <div class="meetings-create-form-title">
+            Участники
+        </div>
+    </form>
+</div>
+
+<div class="meetings-list">
+    <div class="meetings-list-items">
+        <a href="#" class="meetings-list-item clearfix with-arrow">
+            <div class="wrapper">
+                <div class="meetings-list-item-photo">
+                    <img src="images/tmp/user-1.jpg" alt="">
+                </div>
+                <div class="meetings-list-item-info">
+                    <div class="meetings-list-item-name">Александр Иванов и еще 4</div>
+                    <div class="meetings-list-item-desc">Глава инвестиционного департамента корпорации</div>
+                    <div class="meetings-list-item-status">
+                        <i class="icon-status icon-status-success"></i> Подтвердил
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="meetings-list-item clearfix with-arrow">
+            <div class="wrapper">
+                <div class="meetings-list-item-photo">
+                    <img src="images/tmp/user-2.jpg" alt="">
+                </div>
+                <div class="meetings-list-item-info">
+                    <div class="meetings-list-item-name">Виталий Петров</div>
+                    <div class="meetings-list-item-desc">Человек-пароход</div>
+                    <div class="meetings-list-item-status">
+                        <i class="icon-status icon-status-idle"></i> Ожидает подтверждения
+                    </div>
+                </div>
+            </div>
+        </a>
+
+        <a href="#" class="meetings-list-item clearfix with-arrow">
+            <div class="wrapper">
+                <div class="meetings-list-item-photo">
+                    <img src="images/tmp/user-3.jpg" alt="">
+                </div>
+                <div class="meetings-list-item-info">
+                    <div class="meetings-list-item-name">Екатерина Романова</div>
+                    <div class="meetings-list-item-desc">Пионерка, комсомолка и просто красивая женщина!</div>
+                    <div class="meetings-list-item-status">
+                        <i class="icon-status icon-status-canceled"></i> Отменено
+                    </div>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="fixed-footer">
+    <div class="wrapper">
+        <div class="row">
+            <div class="col-6">
+                <button class="btn btn-lg btn-block btn-green">Принять</button>
+            </div>
+            <div class="col-6">
+                <button class="btn btn-lg btn-block btn-red">Отклонить</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

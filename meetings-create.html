@@ -6,128 +6,122 @@
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 </head>
-<body class="button-padding">
+<body>
+<div class="main-wrapper">
+    <form action="#" method="POST" class="meetings-create-form js-validate js-meetings-create-form">
+        <div class="wrapper">
+            <div class="meetings-create-form-title">Тема встречи</div>
 
-<div class="wrapper">
-    <form action="#" method="POST" class="meetings-create-form">
-        <div class="meetings-create-form-title">Тема встречи</div>
+            <input type="text" name="subject" class="form-input" style="width: 100%;" placeholder="Тема" required>
 
-        <input type="text" name="subject" class="form-input" style="width: 100%;" placeholder="Тема" required>
-
-        <div class="row">
-            <div class="col-6">
-                <div class="custom-select meetings-create-form-date">
-                    <select name="date" style="margin-bottom: 0;">
-                        <option value="">Дата</option>
-                        <option value="28 октября">28 октября</option>
-                        <option value="29 октября">29 октября</option>
-                        <option value="30 октября">30 октября</option>
-                        <option value="1 ноября">1 ноября</option>
-                    </select>
+            <div class="row">
+                <div class="col-6">
+                    <div class="custom-select meetings-create-form-date">
+                        <select name="date" style="margin-bottom: 0;">
+                            <option value="">Дата</option>
+                            <option value="28 октября">28 октября</option>
+                            <option value="29 октября">29 октября</option>
+                            <option value="30 октября">30 октября</option>
+                            <option value="1 ноября">1 ноября</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="custom-select meetings-create-form-time">
+                        <select name="time" style="margin-bottom: 0;">
+                            <option value="">Время</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                        </select>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="custom-select meetings-create-form-time">
-                    <select name="time" style="margin-bottom: 0;">
-                        <option value="">Время</option>
-                        <option value="13:00">13:00</option>
-                        <option value="13:30">13:30</option>
-                        <option value="14:00">14:00</option>
-                        <option value="14:30">14:30</option>
-                    </select>
-                </div>
+
+            <div class="meetings-create-form-title">Описание встречи</div>
+
+            <textarea name="description" class="form-input" style="width: 100%" placeholder="Что будет обсуждаться на встрече?"></textarea>
+
+            <div class="meetings-create-form-title">
+                Добавить участников
+
+                <a href="meetings-search.html" class="add-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="94" height="93.969" viewBox="0 0 94 93.969">
+                        <defs>
+                            <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+                                <feOffset dy="5" in="SourceAlpha"/>
+                                <feGaussianBlur stdDeviation="2.236" result="dropBlur"/>
+                                <feFlood flood-color="#5f5f5f" flood-opacity="0.51"/>
+                                <feComposite operator="in" in2="dropBlur" result="dropShadowComp"/>
+                                <feComposite in="SourceGraphic" result="shadowed"/>
+                            </filter>
+                        </defs>
+                        <g>
+                            <circle cx="46.515" cy="41.985" r="41.985" fill="#ad73ed" filter="url(#drop-shadow-1)" />
+                            <path d="M59.910,43.131 L48.243,43.131 L48.243,53.632 L44.743,53.632 L44.743,43.131 L34.242,43.131 L34.242,39.631 L44.743,39.631 L44.743,27.964 L48.243,27.964 L48.243,39.631 L59.910,39.631 L59.910,43.131 Z" fill="#fff" fill-rule="evenodd"/>
+                        </g>
+                    </svg>
+                </a>
             </div>
         </div>
 
-        <div class="meetings-create-form-title">Описание встречи</div>
+        <div class="meetings-list button-padding">
+            <div class="meetings-list-items">
 
-        <textarea name="description" class="form-input" style="width: 100%" placeholder="Что будет обсуждаться на встрече?"></textarea>
+                <div class="meetings-list-item clearfix">
+                    <div class="wrapper">
+                        <div class="meetings-list-item-photo">
+                            <img src="images/tmp/user-1.jpg" alt="">
+                        </div>
+                        <div class="meetings-list-item-info">
+                            <div class="meetings-list-item-name">Александр Иванов</div>
+                            <div class="meetings-list-item-desc">Глава инвестиционного департамента корпорации «Роскорпорация»</div>
+                        </div>
+                        <a href="#" class="meetings-list-item-del"></a>
+                    </div>
+                </div>
 
-        <div class="meetings-create-form-title">
-            Добавить участников
+                <div class="meetings-list-item clearfix">
+                    <div class="wrapper">
+                        <div class="meetings-list-item-photo">
+                            <img src="images/tmp/user-2.jpg" alt="">
+                        </div>
+                        <div class="meetings-list-item-info">
+                            <div class="meetings-list-item-name">Виталий Петров</div>
+                            <div class="meetings-list-item-desc">Человек-пароход</div>
+                        </div>
+                        <a href="#" class="meetings-list-item-del"></a>
+                    </div>
+                </div>
 
-            <a href="#" class="add-button">
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="94" height="93.969" viewBox="0 0 94 93.969">
-                    <defs>
-                        <style>
-                            .cls-1 {
-                                fill: #ad73ed;
-                                filter: url(#drop-shadow-1);
-                            }
+                <div class="meetings-list-item clearfix">
+                    <div class="wrapper">
+                        <div class="meetings-list-item-photo">
+                            <img src="images/tmp/user-3.jpg" alt="">
+                        </div>
+                        <div class="meetings-list-item-info">
+                            <div class="meetings-list-item-name">Екатерина Романова</div>
+                            <div class="meetings-list-item-desc">Пионерка, комсомолка и просто красивая женщина!</div>
+                        </div>
+                        <a href="#" class="meetings-list-item-del"></a>
+                    </div>
+                </div>
 
-                            .cls-2 {
-                                fill: #fff;
-                                fill-rule: evenodd;
-                            }
-                        </style>
+            </div>
+        </div>
 
-                        <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
-                            <feOffset dy="5" in="SourceAlpha"/>
-                            <feGaussianBlur stdDeviation="2.236" result="dropBlur"/>
-                            <feFlood flood-color="#5f5f5f" flood-opacity="0.51"/>
-                            <feComposite operator="in" in2="dropBlur" result="dropShadowComp"/>
-                            <feComposite in="SourceGraphic" result="shadowed"/>
-                        </filter>
-                    </defs>
-                    <g>
-                        <circle cx="46.515" cy="41.985" r="41.985" class="cls-1"/>
-                        <path d="M59.910,43.131 L48.243,43.131 L48.243,53.632 L44.743,53.632 L44.743,43.131 L34.242,43.131 L34.242,39.631 L44.743,39.631 L44.743,27.964 L48.243,27.964 L48.243,39.631 L59.910,39.631 L59.910,43.131 Z" class="cls-2"/>
-                    </g>
-                </svg>
-            </a>
+        <div class="fixed-footer">
+            <div class="wrapper">
+                <button type="submit" class="btn btn-lg btn-block btn-magenta">Отправить приглашения</button>
+            </div>
         </div>
     </form>
 </div>
 
-<div class="meetings-list">
-    <div class="meetings-list-items">
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
+<script src="js/script.js"></script>
 
-        <div class="meetings-list-item clearfix">
-            <div class="wrapper">
-                <div class="meetings-list-item-photo">
-                    <img src="images/tmp/user-1.jpg" alt="">
-                </div>
-                <div class="meetings-list-item-info">
-                    <div class="meetings-list-item-name">Александр Иванов</div>
-                    <div class="meetings-list-item-desc">Глава инвестиционного департамента корпорации «Роскорпорация»</div>
-                </div>
-                <a href="#" class="meetings-list-item-del"></a>
-            </div>
-        </div>
-
-        <div class="meetings-list-item clearfix">
-            <div class="wrapper">
-                <div class="meetings-list-item-photo">
-                    <img src="images/tmp/user-2.jpg" alt="">
-                </div>
-                <div class="meetings-list-item-info">
-                    <div class="meetings-list-item-name">Виталий Петров</div>
-                    <div class="meetings-list-item-desc">Человек-пароход</div>
-                </div>
-                <a href="#" class="meetings-list-item-del"></a>
-            </div>
-        </div>
-
-        <div class="meetings-list-item clearfix">
-            <div class="wrapper">
-                <div class="meetings-list-item-photo">
-                    <img src="images/tmp/user-3.jpg" alt="">
-                </div>
-                <div class="meetings-list-item-info">
-                    <div class="meetings-list-item-name">Екатерина Романова</div>
-                    <div class="meetings-list-item-desc">Пионерка, комсомолка и просто красивая женщина!</div>
-                </div>
-                <a href="#" class="meetings-list-item-del"></a>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="fixed-footer">
-    <div class="wrapper">
-        <button class="btn btn-lg btn-block btn-magenta">Отправить приглашения</button>
-    </div>
-</div>
 </body>
 </html>

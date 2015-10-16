@@ -1,10 +1,25 @@
 @import (inline) "../bower_components/normalize-css/normalize.css";
+@import (inline) "../bower_components/animate.css/animate.css";
 @import "grid";
 
+html {
+  height: 100%;
+}
+
 body {
-  background: #fff;
+  position: relative;
+  height: 100%;
+  background: #4e4e4e;
   font-family: Roboto, HelveticaNeue, "Helvetica Neue", Arial, sans-serif;
   color: #262626;
+}
+
+.main-wrapper {
+  min-height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.9)
 }
 
 .wrapper {
@@ -43,14 +58,48 @@ body {
 }
 
 .meetings-list-search {
-  margin-top: 15px;
+  padding-top: 15px;
   border-bottom: 1px solid #b2b2b2;
+}
+
+.meetings-list-search-tags {
+
+}
+
+.meetings-list-search-tags-item {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  padding: 3px 8px;
+  background: #572261;
+  border-radius: 20px;
+  vertical-align: middle;
+  margin-right: 10px;
+  
+  &:hover {
+    background: #7c2e87;
+  }
+
+  &:before {
+    content: "×";
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    font-size: 14px;
+  }
 }
 
 .meetings-list-title {
   padding: 8px 0;
   background: #f3f3f3;
   font-size: 14px;
+}
+
+.meetings-list-items {
+  overflow-x: hidden;
 }
 
 .meetings-list-item {
@@ -95,6 +144,10 @@ body {
   }
 }
 
+.meetings-list-item-info {
+  padding-left: 80px;
+}
+
 .meetings-list-item-del {
   display: block;
   position: absolute;
@@ -105,6 +158,52 @@ body {
   height: 26px;
   background: url("../images/icon-close.png") no-repeat;
   background-size: 100%;
+}
+
+.meetings-list-item-check {
+  display: block;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -13px;
+  width: 26px;
+  height: 26px;
+
+  svg {
+    width: 26px;
+    height: 26px;
+
+    circle {
+      //transition: fill 200ms;
+    }
+
+    path {
+      fill: #737373;
+      transition: fill 200ms;
+    }
+
+    .icon-check-check {
+      fill: transparent;
+    }
+  }
+
+  &.active {
+    svg {
+      circle {
+        //fill: #0E8A05;
+        //opacity: 1;
+      }
+
+      path {
+        fill: #0E8A05;
+        transition: fill 200ms;
+      }
+
+      .icon-check-check {
+        fill: #0E8A05;
+      }
+    }
+  }
 }
 
 .meetings-list-item-name {
@@ -139,7 +238,7 @@ body {
     vertical-align: middle;
     position: relative;
     top: -1px;
-    margin-right: 5px;
+    margin-right: 2px;
   }
 }
 
@@ -307,7 +406,9 @@ body {
   }
 }
 
-.form-input {
+.form-input,
+.form-input-group {
+  position: relative;
   display: inline-block;
   background: #eaeaea;
   height: 40px;
@@ -319,6 +420,60 @@ body {
   -webkit-appearance:none;
   border-radius: 0;
   resize: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  
+  &.has-error {
+    background: #ffa0a2;
+  }
+
+  &[disabled] {
+    opacity: 1;
+    color: #000000;
+  }
+
+  input {
+    border: none;
+    background: transparent;
+    font-size: 13px;
+    width: 100%;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-appearance:none;
+    border-radius: 0;
+    box-sizing: border-box;
+  }
+}
+
+.form-input-group {
+  padding: 0;
+
+  input {
+    padding: 5px 15px;
+  }
+}
+
+.form-input-group-clear {
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -0.7em;
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 16px;
+  width: 22px;
+  height: 22px;
+  border-radius: 22px;
+  text-align: center;
+  vertical-align: middle;
+
+  &:before {
+    content: "×";
+    display: block;
+    position: relative;
+    top: 2px;
+  }
 }
 
 textarea.form-input {
@@ -330,20 +485,40 @@ textarea.form-input {
 .fixed-footer {
   position: fixed;
   width: 100%;
+  max-width: 600px;
   bottom: 0;
-  left: 0;
   padding: 15px 0;
   background: rgba(255, 255, 255, 0.5);
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   .fixed-footer {
-    background: transparent;
     -webkit-backdrop-filter: blur(10px);
 
     .btn {
       opacity: 0.8;
     }
+  }
+}
+
+.main-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  opacity: 0;
+  display: none;
+  -webkit-transition: opacity 500ms;
+  transition: opacity 500ms;
+  color: #fff;
+
+  &.active {
+    opacity: 1;
+    -webkit-transition: opacity 500ms;
+    transition: opacity 500ms;
   }
 }
 

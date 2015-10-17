@@ -41,11 +41,7 @@ $(document).ready(function() {
 
         if ($(this).valid()) {
 
-            overlay.show();
-            setTimeout(function(){
-                overlay.addClass('active');
-            }, 100);
-            overlay.spin('large');
+            overlay.fadeIn('fast');
 
             $.ajax({
                 type: "POST",
@@ -57,15 +53,11 @@ $(document).ready(function() {
                         //console.log(data.message);
                     } else {
                         setTimeout(function(){
-                            overlay.removeClass('active');
-
                             setTimeout(function(){
-                                overlay.spin(false);
-                                overlay.hide();
+                                overlay.fadeOut('fast');
                             }, 500);
-
                             resultsBlock.html(data);
-                        }, 500);
+                        }, 2000);
                     }
                 }
             });
@@ -77,8 +69,9 @@ $(document).ready(function() {
 
 function addUserTag(userId, userName) {
     var tagArea = $('#meetings-search-tags');
+    var svgCloseIcon = "<svg width=\"8px\" height=\"8px\" viewBox=\"0 0 269 271\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\"><g stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\"><path d=\"M16.5,16.5 L253.220306,253.220306\" stroke=\"#fff\" stroke-width=\"42\" stroke-linecap=\"square\"></path><path d=\"M16.5,17.5 L253.220306,254.220306\" stroke=\"#fff\" stroke-width=\"42\" stroke-linecap=\"square\" transform=\"translate(135.000000, 136.000000) scale(1, -1) translate(-135.000000, -136.000000)\"></path></g> </svg>";
 
-    tagArea.append('<a href="#" data-meetings-search-remove="' + userId + '" class="meetings-list-search-tags-item animated bounceIn">' + userName + '</a>');
+    tagArea.append('<a href="#" data-meetings-search-remove="' + userId + '" class="meetings-list-search-tags-item animated fadeIn"><span class="meetings-list-search-tags-item-close">' + svgCloseIcon + '</span>' + userName + '</a>');
 }
 
 function removeUserTag(userId) {

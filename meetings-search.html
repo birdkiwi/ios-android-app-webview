@@ -8,7 +8,9 @@
 </head>
 <body>
 <div class="main-wrapper">
-    <div class="main-overlay"></div>
+    <div class="main-overlay">
+        <svg width='80px' height='80px' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" class="main-overlay-spinner"><rect x="0" y="0" width="100" height="100" fill="none" class="bk"></rect><circle cx="50" cy="50" r="40" stroke="#adadad" fill="none" stroke-width="14" stroke-linecap="round"></circle><circle cx="50" cy="50" r="40" stroke="#572362" fill="none" stroke-width="14" stroke-linecap="round"><animate attributeName="stroke-dashoffset" dur="2s" repeatCount="indefinite" from="0" to="502"></animate><animate attributeName="stroke-dasharray" dur="2s" repeatCount="indefinite" values="200.8 50.19999999999999;1 250;200.8 50.19999999999999"></animate></circle></svg>
+    </div>
 
     <div class="meetings-list">
         <div class="wrapper">
@@ -17,7 +19,14 @@
                     <div class="col-8">
                         <div class="form-input-group" style="width: 100%;">
                             <input type="text" name="search" placeholder="Поиск" style="width: 100%;" required>
-                            <a href="#" class="form-input-group-clear js-input-clear"></a>
+                            <a href="#" class="form-input-group-clear js-input-clear">
+                                <svg width="22px" height="22px" viewBox="0 0 269 271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <path d="M16.5,16.5 L253.220306,253.220306" id="Line" stroke="#979797" stroke-width="22" stroke-linecap="square"></path>
+                                        <path d="M16.5,17.5 L253.220306,254.220306" id="Line-Copy" stroke="#979797" stroke-width="22" stroke-linecap="square" transform="translate(135.000000, 136.000000) scale(1, -1) translate(-135.000000, -136.000000) "></path>
+                                    </g>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                     <div class="col-4">
@@ -27,7 +36,16 @@
             </form>
 
             <div class="meetings-list-search-tags" id="meetings-search-tags">
-                <a href="#" data-meetings-search-remove="666" class="meetings-list-search-tags-item">Иван Федорович</a>
+                <a href="#" data-meetings-search-remove="666" class="meetings-list-search-tags-item">
+                    <span class="meetings-list-search-tags-item-close">
+                        <svg width="8px" height="8px" viewBox="0 0 269 271" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <path d="M16.5,16.5 L253.220306,253.220306" id="Line" stroke="#fff" stroke-width="42" stroke-linecap="square"></path>
+                                <path d="M16.5,17.5 L253.220306,254.220306" id="Line-Copy" stroke="#fff" stroke-width="42" stroke-linecap="square" transform="translate(135.000000, 136.000000) scale(1, -1) translate(-135.000000, -136.000000) "></path>
+                            </g>
+                        </svg>
+                    </span>Иван Федорович
+                </a>
             </div>
         </div>
     </div>
@@ -43,7 +61,6 @@
 
 <script src="bower_components/jquery/dist/jquery.min.js"></script>
 <script src="bower_components/jquery-validation/dist/jquery.validate.min.js"></script>
-<script src="bower_components/spin.js/spin.min.js"></script>
 <script src="bower_components/spin.js/jquery.spin.js"></script>
 <script src="js/script.js"></script>
 </body>
